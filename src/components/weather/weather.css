@@ -1,0 +1,53 @@
+.weather-container {
+  width: 100%;
+  min-height: 100%;
+  background-image: linear-gradient(180deg, #80b3ff, #ffcccc);
+}
+.info-container {
+  margin-top: 2rem;
+  height: 100vh;
+  text-align: center;
+}
+img.clouds-icons {
+  height: 5rem;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+}
+
+.search-container input {
+  display: flex;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 20px;
+  height: 1.2rem;
+  color: gray;
+}
+
+.search-icon {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 0.5rem 0.65rem;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.element {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.weather-info {
+  margin: 1rem;
+}
+
+img.icon {
+  object-fit: contain;
+}
