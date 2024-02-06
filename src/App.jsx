@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { Home, About, Projects, Contact } from "./pages";
+import { Home, Rain, Plants, Contact } from "./pages";
 
 function App() {
   return (
     <>
-      <main className="container mx-auto w-full h-full">
+      <main className="container mx-auto w-full h-screen">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/weather" element={<Rain />} />
+          <Route path="/plants" element={<Plants />} />
+          <Route path="/about" element={<Contact />} />
         </Routes>
       </main>
     </>

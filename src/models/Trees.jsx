@@ -136,7 +136,7 @@ export function Oaktree({isRotating, setIsRotating, setCurrentStage, ...props}) 
     <group ref={treeRef} {...props}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={(0.05, 0.05, 0.05)}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[59.158, 3.573, 306.075]}>
+          <group position={[60.158, 3.573, 306.075]}>
             <mesh
               castShadow
               receiveShadow

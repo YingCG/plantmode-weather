@@ -33,6 +33,54 @@ const Weather = () => {
     }
   };
 
+  const getWeatherIcon = (weatherCode) => {
+    // Implement a mapping from weather codes to your icon paths
+    switch (weatherCode) {
+      case 800:
+        return clear_icon;
+      case 801:
+      case 802:
+      case 803:
+      case 804:
+        return cloud_icon;
+      case 300:
+      case 301:
+      case 302:
+      case 310:
+      case 311:
+      case 312:
+      case 313:
+      case 314:
+      case 321:
+        return drizzle_icon;
+      case 500:
+      case 501:
+      case 502:
+      case 503:
+      case 504:
+      case 511:
+      case 520:
+      case 521:
+      case 522:
+      case 531:
+        return rain_icon;
+      case 600:
+      case 601:
+      case 602:
+      case 611:
+      case 612:
+      case 613:
+      case 615:
+      case 616:
+      case 620:
+      case 621:
+      case 622:
+        return snow_icon;
+      default:
+        return clear_icon;
+    }
+  };
+
   useEffect(() => {
     fetchData(location);
   }, [location]);
@@ -76,12 +124,9 @@ const Weather = () => {
             </h1>
             <span>precipitation: {weatherData.precipitation}</span>
 
+      
             <div className="element">
-              <p className="weather-info">Sunrise: {weatherData.sys.sunrise}</p>
-              <p className="weather-info">Sunset: {weatherData.sys.sunset}</p>
-            </div>
-            <div className="element">
-              <img src={humidity_icon} alt="" className="icon" />
+              <img src={getWeatherIcon(weatherData.weather[0].id)} alt="" className="icon" />
               <p className="weather-info">
                 Min Temperature: {weatherData.main.temp_min}
               </p>
@@ -91,6 +136,8 @@ const Weather = () => {
               <p className="weather-info">
                 Feels like: {weatherData.main.feels_like}
               </p>
+            </div>
+            <div className="element">
               <p className="weather-info">
                 Humidity: {weatherData.main.humidity}
               </p>
@@ -104,6 +151,10 @@ const Weather = () => {
               <p className="weather-info">
                 Wind Speed: {weatherData.wind.speed}
               </p>
+            </div>
+            <div className="element">
+              <p className="weather-info">Sunrise: {weatherData.sys.sunrise}</p>
+              <p className="weather-info">Sunset: {weatherData.sys.sunset}</p>
             </div>
           </>
         )}

@@ -5,13 +5,14 @@ import Trees from "../models/Trees";
 import Weather from "../components/weather/Weather";
 import Sky from "../models/Sky";
 import Cloud from "../models/Cloud";
+import CloudR from "../models/CloudR";
 
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1)
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
-    let screenPosition = [0, -6.5, -43];
+    let screenPosition = [-2, -13, -30];
     let rotation = [0.1, 4.7, 0];
 
     if (window.innerWidth < 768) {
@@ -26,10 +27,10 @@ const Home = () => {
     adjustIslandForScreenSize();
 
   return (
-    <section className="w-full h-screen relative ">
-      {/* <div className="flex items-center justify-center">Pop Up</div> */}
+    <section className="w-full h-screen relative flex ">
+      <div className="flex items-center justify-center weather-forecast justify-end"><Weather/></div>
       <Canvas
-        className={`w-full h-screen bg-transparent ${
+        className={`w-full h-screen bg-transparent relative flex flex-grow${
           isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
@@ -44,7 +45,8 @@ const Home = () => {
             groundColor="#000000"
             intensity={1}
           />
-          <Cloud />
+          <Cloud position={[-3, 1, 1]} />
+          <CloudR position={[2, 1, 1.5]} />
           <Sky isRotating={isRotating}/>
           <Trees
             position={islandPosition}

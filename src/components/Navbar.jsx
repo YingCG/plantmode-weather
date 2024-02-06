@@ -13,28 +13,28 @@ const Navbar = () => {
       </div>
       <div className="mx-8">
         <NavLink
+          to="/weather"
+          className={({ isActive }) =>
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[2rem]"
+          }
+        >
+         Weather
+        </NavLink>
+        <NavLink
+          to="/plants"
+          className={({ isActive }) =>
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[2rem]"
+          }
+        >
+          Native Plants
+        </NavLink>
+        <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[2rem]"
           }
         >
-          Weather's Today
-        </NavLink>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
-          }
-        >
-          Hikoi Around
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
-          }
-        >
-          About
+          Research
         </NavLink>
       </div>
     </header>

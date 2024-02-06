@@ -6,7 +6,6 @@ import { useFrame } from "@react-three/fiber";
 const Cloud = ( {isRotating, ...props}) => {
   const {scene, animations} = useGLTF(cloudScene);
   const cloudRef = useRef()
-  const {actions} = useAnimations(animations, cloudRef)
   // useEffect(() => {
   //   actions['Take 001'].play()
   // },[])
@@ -15,12 +14,12 @@ const Cloud = ( {isRotating, ...props}) => {
     // cloudRef.current.rotation.x += 0.15 * change
     
     // Update the Y position simulate the cloud moving in a sin wave
-    cloudRef.current.rotation.y += 0.15 * change
+    cloudRef.current.rotation.y += 0.05 * change
   })
 
   return (
-    <mesh {...props} position={[-4, 1, 1]} scale={[0.25, 0.25, 0.25]} ref={cloudRef}>
-      <primitive object={scene} />
+    <mesh {...props} position={[-3, 0.5, 2]} scale={[0.5, 0.5, 0.25]} ref={cloudRef}>
+      <primitive object={scene.clone()} />
     </mesh>
   );
 };
