@@ -1,14 +1,14 @@
 import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
-// import Island from "../models/Island";
 import Trees from "../models/Trees";
 import Weather from "../components/weather/Weather";
 import Sky from "../models/Sky";
 import Cloud from "../models/Cloud";
+
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
-
+  const [currentStage, setCurrentStage] = useState(1)
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43];
@@ -35,23 +35,24 @@ const Home = () => {
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={3} />
-          <ambientLight intensity={0.5} />
-          {/* <pointLight /> */}
-          {/* <spotLight /> */}
+          <directionalLight position={[1, 1, 1]} intensity={1} />
+          <ambientLight intensity={0.6} />
+          <pointLight />
+          <spotLight />
           <hemisphereLight
             skyColor="#b1e1ff"
             groundColor="#000000"
             intensity={1}
           />
-          <Sky />
           <Cloud />
+          <Sky isRotating={isRotating}/>
           <Trees
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
           />
         </Suspense>
       </Canvas>

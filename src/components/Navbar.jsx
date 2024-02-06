@@ -8,33 +8,33 @@ const Navbar = () => {
           to="/"
           className="w-10 h-10 items-center justify-center flex font-bold shadow-md "
         >
-          <p className="blue-gradient_text p-[5px] px-1	">Logo</p>
+          <p className="blue-gradient_text p-[1rem] px-1	">Plant Mode</p>
         </NavLink>
       </div>
       <div className="mx-8">
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[5px]" : "text-black p-[5px]"
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
           }
         >
-          About
+          Weather's Today
         </NavLink>
         <NavLink
           to="/projects"
           className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[5px]" : "text-black p-[5px]"
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
           }
         >
-          Project
+          Hikoi Around
         </NavLink>
         <NavLink
           to="/contact"
           className={({ isActive }) =>
-            isActive ? "text-purple-500 p-[5px]" : "text-black p-[5px]"
+            isActive ? "text-purple-500 p-[2rem]" : "text-black p-[5px]"
           }
         >
-          Contact
+          About
         </NavLink>
       </div>
     </header>

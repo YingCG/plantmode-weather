@@ -5,7 +5,7 @@ import { Home, About, Projects, Contact } from "./pages";
 function App() {
   return (
     <>
-      <main className="container mx-auto">
+      <main className="container mx-auto w-full h-full">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

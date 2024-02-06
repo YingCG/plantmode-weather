@@ -21,7 +21,8 @@ export default {
       "gray-light": "#d3dce6",
     },
     spacing: {
-      "5px": "5px",
+      "1rem": "1rem",
+      "2rem": "2rem",
     },
     extend: {},
   },
