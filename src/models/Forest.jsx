@@ -3,12 +3,12 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import forestScene from "../assets/diorama_-_forest_loner.glb";
 
-export function Forest(props) {
+export function Forest({ isRotating, ...props }) {
   const forestRef = useRef();
   const { nodes, materials } = useGLTF(forestScene);
   return (
     <group ref={forestRef} {...props}>
-      <group scale={0.01}>
+      <group position={[0.1, -5, 0.5]} scale={[0.025, 0.025, 0.025]}>
         <mesh
           castShadow
           receiveShadow
